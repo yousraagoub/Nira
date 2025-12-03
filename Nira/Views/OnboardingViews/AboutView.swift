@@ -1,94 +1,87 @@
 import SwiftUI
 
 struct AboutView: View {
-    @EnvironmentObject var navigationVM: NavigationViewModel
-    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
-    
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
+    @Binding var path: NavigationPath
     var body: some View {
         ZStack {
-            // Background Color
             Color.darkTeal.ignoresSafeArea()
             VStack(spacing: 30) {
-                
-                // زر الاكس فيه نافقيشن
                 HStack {
                     Button(action: {
                         hasSeenOnboarding = true
-                        navigationVM.setRoot(to: .home)
+                        path.append("home")
                     }) {
                         Image(systemName: "xmark")
                             .font(.system(size: 28, weight: .bold))
-                            .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
+                            .foregroundColor(Color.brightGray)
                             .frame(width: 55, height: 55)
                             .background(
                                 Circle()
-                                    .fill(Color.white.opacity(0.2))
+                                    .fill(Color.whiteWhite.opacity(0.2))
                             )
                     }
                     .padding(.leading, 7)
-                    
+
                     Spacer()
                 }
                 .padding(.top, -20)
-                
+
                 Spacer()
-                
-                Text("Welcome to NIRA.")
+
+                Text("Welcome to Nira")
                     .font(.system(size: 28, weight: .semibold))
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
-                
+
                 Image("NiraLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 160, height: 160)
+                    .frame(width: 139, height: 139)
                     .padding(.top, -10)
-                
-                Text("""
-NIRA enhances visual perception and strengthens memory through short exercises.
-""")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
-                
-                Text("""
-The faster you train, the stronger your memory becomes.
-
-""")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 30)
                 
                 Spacer()
                 
-                // زر السهم فيه نافقيشن
+                Text("""
+Nira enhances visual perception and strengthens memory through short exercises.
+""")
+                .font(.system(size: 20, weight: .medium))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+                Spacer()
+                Text("""
+The faster you train, the stronger your memory becomes.
+""")
+                .font(.system(size: 20, weight: .medium))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 30)
+
+                Spacer()
+
                 HStack {
                     Spacer()
-                    Button(action: {}) {
-                        Image(systemName: "arrow.left")
+                    Button(action: {
+                        path.append("about2")
+                    }) {
+                        Image(systemName: "hand.tap.fill")
                             .font(.system(size: 26, weight: .bold))
-                            .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
+                            .foregroundColor(Color.brightGray)
                             .frame(width: 65, height: 65)
                             .background(
                                 Circle()
-                                    .fill(Color.white.opacity(0.2))
+                                    .fill(Color.whiteWhite.opacity(0.2))
                             )
                     }
-                    .padding(.bottom, 10)
-                    .padding(.trailing, 260)
                     Spacer()
                 }
             }
             .padding()
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
-    AboutView()
-        .environmentObject(NavigationViewModel())
+    AboutView(path: .constant(NavigationPath()))
 }
-

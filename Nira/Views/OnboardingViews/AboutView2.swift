@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AboutView2: View {
+    @Binding var path: NavigationPath
     var body: some View {
         ZStack {
             //Background Color
@@ -8,7 +9,7 @@ struct AboutView2: View {
             VStack(spacing: 30) {
                 //The X button
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {path.append("home")}) {
                         Image(systemName: "xmark")
                             .font(.system(size: 28, weight: .bold))
                             .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
@@ -27,39 +28,32 @@ struct AboutView2: View {
                 Spacer()
                 
                 Image(systemName: "eye")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
+                    .font(Font.system(size: 84, weight: .bold))
                     .bold()
                     .foregroundColor(Color.brightGray)
-                           
                 Text("This training will enhance your visual perception abilities.")
-                              
                        .font(.system(size: 20, weight: .medium))
-                           .foregroundColor(.white)
-                           .multilineTextAlignment(.center)
-                           .padding(.horizontal, 30)
-                       
+                       .foregroundColor(.whiteWhite)
+                       .multilineTextAlignment(.center)
+                       .padding(.horizontal, 30)
+                Spacer()
                 Image(systemName: "brain.head.profile")
-                   .resizable()
-                   .scaledToFit()
-                   .frame(width: 150, height: 150)
-                   .bold()
-                   .foregroundColor(Color.brightGray)
+                    .font(Font.system(size: 84, weight: .bold))
+                    .bold()
+                    .foregroundColor(Color.brightGray)
                
                Text("This training will enhance the strength of your visual memory.")
                    .font(.system(size: 20, weight: .medium))
-                   .foregroundColor(.white)
+                   .foregroundColor(.whiteWhite)
                    .multilineTextAlignment(.center)
                    .padding(.horizontal, 30)
-                           
                 Spacer()
                 
-                // //The arrow button
+               //The arrow button
                 HStack {
                     Spacer()
-                    Button(action: {}) {
-                        Image(systemName: "arrow.right")
+                    Button(action: {path.append("about")}) {
+                        Image(systemName: "hand.tap.fill")
                             .font(.system(size: 26, weight: .bold))
                             .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
                             .frame(width: 65, height: 65)
@@ -68,8 +62,7 @@ struct AboutView2: View {
                                     .fill(Color.white.opacity(0.2))
                             )
                     }
-                    .padding(.bottom, 10)
-                    .padding(.trailing, 30)
+                    Spacer()
                     
                 }
             }
@@ -79,6 +72,6 @@ struct AboutView2: View {
 }
 
 #Preview {
-    AboutView2()
+    AboutView2(path: .constant(NavigationPath()))
 }
 

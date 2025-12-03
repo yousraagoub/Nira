@@ -5,48 +5,55 @@
 //  Created by Yousra Abdelrahman on 11/06/1447 AH.
 //
 import SwiftUI
+
 struct HomeView: View {
-    @EnvironmentObject var navigationVM: NavigationViewModel
+    @Binding var path: NavigationPath
 
     var body: some View {
-        NavigationStack(path: $navigationVM.path){
-            ZStack{
-                Color.brightGray.ignoresSafeArea(.all)
-                VStack{
-                    HomeButtonStyle(systemName: "eye") {
-                        navigationVM.navigate(to: .eyeTracking)
-                    }
-                    Text("Eye Tracking")
-                        .foregroundColor(Color.darkTeal)
-                        .font(Font.system(size: 32, weight: .bold))
-                        .padding(.bottom, 100)
-                    HomeButtonStyle(systemName: "brain.head.profile") {
-                        navigationVM.navigate(to: .memory)
-                    }
-                    Text("Memory")
-                        .foregroundColor(Color.darkTeal)
-                        .font(Font.system(size: 32, weight: .bold))
-                }//VStack
-            }//ZStack
-            .navigationBarBackButtonHidden(true)
-            //Toolbar modifier for About screen and Insight Screen
-            .toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    ToolbarButtonStyle(systemName: "info") {
-                        navigationVM.navigate(to: .about)
-                    }
+        ZStack {
+            Color.brightGray.ignoresSafeArea(.all)
+
+            VStack {
+                // MAIN EYE TRACKING BUTTON
+                HomeButtonStyle(systemName: "eye") {
+                    path.append("eyeTracking")
                 }
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
-                        navigationVM.navigate(to: .insights)
-                    }
+
+                Text("Eye Tracking")
+                    .foregroundColor(Color.darkTeal)
+                    .font(Font.system(size: 32, weight: .bold))
+                    .padding(.bottom, 100)
+
+                // MAIN MEMORY BUTTON
+                HomeButtonStyle(systemName: "brain.head.profile") {
+                    path.append("memory")
                 }
-            }//.toolbar
-        }//NavigationStack
-    }//body
-}//struct
+
+                Text("Memory")
+                    .foregroundColor(Color.darkTeal)
+                    .font(Font.system(size: 32, weight: .bold))
+            }
+        }
+
+        // MARK: - TOOLBAR BUTTONS
+        .toolbar {
+            // INFO → ABOUT VIEW
+            ToolbarItem(placement: .topBarLeading) {
+                ToolbarButtonStyle(systemName: "info") {
+                    path.append("about")
+                }
+            }
+
+            // INSIGHT → INSIGHT VIEW
+            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
+                    path.append("insight")
+                }
+            }
+        }
+    }
+}
 
 #Preview {
-    HomeView()
-        .environmentObject(NavigationViewModel())
+    HomeView(path: .constant(NavigationPath()))
 }
