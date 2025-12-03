@@ -12,12 +12,13 @@ struct AboutView2: View {
                     Button(action: {path.append("home")}) {
                         Image(systemName: "xmark")
                             .font(.system(size: 28, weight: .bold))
-                            .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
+                            .foregroundColor(Color.brightGray)
                             .frame(width: 55, height: 55)
                             .background(
                                 Circle()
-                                    .fill(Color.white.opacity(0.2))
+                                    .fill(Color.clear)
                             )
+                            .glassEffect(.clear.interactive())
                     }
                     .padding(.leading, 7)
                     
@@ -31,7 +32,7 @@ struct AboutView2: View {
                     .font(Font.system(size: 84, weight: .bold))
                     .bold()
                     .foregroundColor(Color.brightGray)
-                Text("This training will enhance your visual perception abilities.")
+                Text("This exercise will enhance your visual perception abilities.")
                        .font(.system(size: 20, weight: .medium))
                        .foregroundColor(.whiteWhite)
                        .multilineTextAlignment(.center)
@@ -42,7 +43,7 @@ struct AboutView2: View {
                     .bold()
                     .foregroundColor(Color.brightGray)
                
-               Text("This training will enhance the strength of your visual memory.")
+               Text("This exercise will enhance the strength of your visual memory.")
                    .font(.system(size: 20, weight: .medium))
                    .foregroundColor(.whiteWhite)
                    .multilineTextAlignment(.center)
@@ -55,12 +56,13 @@ struct AboutView2: View {
                     Button(action: {path.append("about")}) {
                         Image(systemName: "hand.tap.fill")
                             .font(.system(size: 26, weight: .bold))
-                            .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
+                            .foregroundColor(Color.brightGray)
                             .frame(width: 65, height: 65)
                             .background(
                                 Circle()
-                                    .fill(Color.white.opacity(0.2))
+                                    .fill(Color.clear)
                             )
+                            .glassEffect(.clear.interactive())
                     }
                     Spacer()
                     

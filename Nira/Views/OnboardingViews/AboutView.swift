@@ -18,9 +18,11 @@ struct AboutView: View {
                             .frame(width: 55, height: 55)
                             .background(
                                 Circle()
-                                    .fill(Color.whiteWhite.opacity(0.2))
+                                    .fill(Color.clear)
                             )
+                            .glassEffect(.clear.interactive())
                     }
+                    
                     .padding(.leading, 7)
 
                     Spacer()
@@ -43,7 +45,7 @@ struct AboutView: View {
                 Spacer()
                 
                 Text("""
-Nira enhances visual perception and strengthens memory through short exercises.
+Nira enhances visual perception and strengthens memory through visual exercises.
 """)
                 .font(.system(size: 20, weight: .medium))
                 .foregroundColor(.white)
@@ -51,7 +53,7 @@ Nira enhances visual perception and strengthens memory through short exercises.
                 .padding(.horizontal, 30)
                 Spacer()
                 Text("""
-The faster you train, the stronger your memory becomes.
+The shorter your exercise, the stronger your visual processing abilities. 
 """)
                 .font(.system(size: 20, weight: .medium))
                 .foregroundColor(.white)
@@ -71,8 +73,10 @@ The faster you train, the stronger your memory becomes.
                             .frame(width: 65, height: 65)
                             .background(
                                 Circle()
-                                    .fill(Color.whiteWhite.opacity(0.2))
+                                    .fill(Color.clear)
                             )
+                            .glassEffect(.clear.interactive())
+                        
                     }
                     Spacer()
                 }
