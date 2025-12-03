@@ -7,6 +7,6 @@
 import Foundation
 
 enum NavigationRoute: Hashable {
-    case splash, about, insights, eyeTracking, memory, feedback, question
+    case splash, home, about, insights, eyeTracking, memory, feedback, question
 }
 

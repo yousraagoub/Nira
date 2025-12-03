@@ -6,8 +6,8 @@
 //
 import SwiftUI
 struct HomeView: View {
-    //For Testing
-    @StateObject var navigationVM = NavigationViewModel()
+    @EnvironmentObject var navigationVM: NavigationViewModel
+
     var body: some View {
         NavigationStack(path: $navigationVM.path){
             ZStack{
@@ -28,6 +28,7 @@ struct HomeView: View {
                         .font(Font.system(size: 32, weight: .bold))
                 }//VStack
             }//ZStack
+            .navigationBarBackButtonHidden(true)
             //Toolbar modifier for About screen and Insight Screen
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
@@ -42,20 +43,10 @@ struct HomeView: View {
                 }
             }//.toolbar
         }//NavigationStack
-        .navigationDestination(for: NavigationRoute.self) { route in
-            switch route {
-            case .splash: SplashView()
-            case .about: AboutView()
-            case .insights: SplashView()
-            case .memory: SplashView()
-            case .feedback: SplashView()
-            case .question: SplashView()
-            case .eyeTracking: SplashView()
-            }
-        }
     }//body
 }//struct
 
 #Preview {
     HomeView()
+        .environmentObject(NavigationViewModel())
 }

@@ -13,4 +13,12 @@ class NavigationViewModel: ObservableObject {
     func navigate(to route: NavigationRoute) {
         path.append(route)
     }
+    
+    func setRoot(to route: NavigationRoute) {
+            path = [route]
+        }
+
+    func goHome() {
+        path = [.home]
+    }
 }

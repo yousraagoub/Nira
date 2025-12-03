@@ -28,7 +28,6 @@ struct NiraApp: App {
     var body: some Scene {
         WindowGroup {
             SplashView().environmentObject(navigationVM)
-            ContentView()
         }
         .modelContainer(sharedModelContainer)
     }

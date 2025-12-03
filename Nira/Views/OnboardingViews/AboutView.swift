@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct AboutView: View {
+    @EnvironmentObject var navigationVM: NavigationViewModel
+    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
+    
     var body: some View {
         ZStack {
             // Background Color
@@ -9,7 +12,10 @@ struct AboutView: View {
                 
                 // زر الاكس فيه نافقيشن
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        hasSeenOnboarding = true
+                        navigationVM.setRoot(to: .home)
+                    }) {
                         Image(systemName: "xmark")
                             .font(.system(size: 28, weight: .bold))
                             .foregroundColor(Color(red: 230/255, green: 246/255, blue: 246/255))
@@ -77,10 +83,12 @@ The faster you train, the stronger your memory becomes.
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 #Preview {
     AboutView()
+        .environmentObject(NavigationViewModel())
 }
 
