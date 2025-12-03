@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct NiraApp: App {
+    @StateObject var navigationVM = NavigationViewModel()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -25,6 +27,7 @@ struct NiraApp: App {
 
     var body: some Scene {
         WindowGroup {
+            SplashView().environmentObject(navigationVM)
             ContentView()
         }
         .modelContainer(sharedModelContainer)
