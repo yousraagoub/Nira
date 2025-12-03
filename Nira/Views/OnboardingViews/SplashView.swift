@@ -13,7 +13,8 @@ struct SplashView: View {
                 Color.darkTeal.ignoresSafeArea()
 
                 VStack(spacing: 30) {
-
+                    //For Testing, must be fixed
+//                    Text("\(hasSeenOnboarding)")
                     Image("NiraSplashLogo")
                         .resizable()
                         .scaledToFit()
@@ -23,7 +24,7 @@ struct SplashView: View {
                 }
                 .onAppear {
                     fadeIn = true
-                    /// AUTO-NAVIGATE AFTER SPLASH
+                    // Auto-nagivate after splash
                     DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
                         if hasSeenOnboarding {
                             path.append("about")

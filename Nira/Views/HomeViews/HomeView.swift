@@ -14,7 +14,6 @@ struct HomeView: View {
             Color.brightGray.ignoresSafeArea(.all)
 
             VStack {
-                // MAIN EYE TRACKING BUTTON
                 HomeButtonStyle(systemName: "eye") {
                     path.append("eyeTracking")
                 }
@@ -24,7 +23,6 @@ struct HomeView: View {
                     .font(Font.system(size: 32, weight: .bold))
                     .padding(.bottom, 100)
 
-                // MAIN MEMORY BUTTON
                 HomeButtonStyle(systemName: "brain.head.profile") {
                     path.append("memory")
                 }
@@ -34,17 +32,12 @@ struct HomeView: View {
                     .font(Font.system(size: 32, weight: .bold))
             }
         }
-
-        // MARK: - TOOLBAR BUTTONS
         .toolbar {
-            // INFO → ABOUT VIEW
             ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "info") {
                     path.append("about")
                 }
             }
-
-            // INSIGHT → INSIGHT VIEW
             ToolbarItem(placement: .topBarTrailing) {
                 ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
                     path.append("insight")
