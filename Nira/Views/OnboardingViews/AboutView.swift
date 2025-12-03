@@ -5,7 +5,6 @@ struct AboutView: View {
         ZStack {
                     // Background Color
                     Color(red: 48/255, green: 95/255, blue: 102/255)                         .ignoresSafeArea()
-            
             VStack(spacing: 30) {
                 
                 // زر الاكس فيه نافقيشن
