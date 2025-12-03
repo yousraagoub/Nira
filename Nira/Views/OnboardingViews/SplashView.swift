@@ -7,12 +7,14 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             // Background Color
-            Color(red: 48/255, green: 95/255, blue: 102/255).ignoresSafeArea()
-            
+            Color.darkTeal.ignoresSafeArea()
             VStack(spacing: 30) {
-                
                 // Logo
-                Image("NiraLogo")
+                Image("NiraSplashLogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 307, height: 432)
+                    .foregroundColor(Color.brightGray)
                 .animation(.easeOut(duration: 1.2), value: fadeIn)
                     .onAppear {
                         fadeIn = true

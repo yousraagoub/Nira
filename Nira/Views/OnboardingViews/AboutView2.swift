@@ -3,12 +3,10 @@ import SwiftUI
 struct AboutView2: View {
     var body: some View {
         ZStack {
-                    // Background Color
-                    Color(red: 48/255, green: 95/255, blue: 102/255)                         .ignoresSafeArea()
-            
+            //Background Color
+            Color.darkTeal.ignoresSafeArea()
             VStack(spacing: 30) {
-                
-                //  زر الاكس فيه نافقيشن
+                //The X button
                 HStack {
                     Button(action: {}) {
                         Image(systemName: "xmark")
@@ -28,32 +26,36 @@ struct AboutView2: View {
                 
                 Spacer()
                 
-                Image("eyeIcon")
-                               .resizable()
-                               .scaledToFit()
-                               .frame(width: 150, height: 150)
+                Image(systemName: "eye")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .bold()
+                    .foregroundColor(Color.brightGray)
                            
-                           Text("This training will enhance your visual perception abilities.")
+                Text("This training will enhance your visual perception abilities.")
                               
                        .font(.system(size: 20, weight: .medium))
                            .foregroundColor(.white)
                            .multilineTextAlignment(.center)
                            .padding(.horizontal, 30)
                        
-                           Image("brainIcon")
-                               .resizable()
-                               .scaledToFit()
-                               .frame(width: 150, height: 150)
-                           
-                           Text("This training will enhance the strength of your visual memory.")
-                               .font(.system(size: 20, weight: .medium))
-                               .foregroundColor(.white)
-                               .multilineTextAlignment(.center)
-                               .padding(.horizontal, 30)
+                Image(systemName: "brain.head.profile")
+                   .resizable()
+                   .scaledToFit()
+                   .frame(width: 150, height: 150)
+                   .bold()
+                   .foregroundColor(Color.brightGray)
+               
+               Text("This training will enhance the strength of your visual memory.")
+                   .font(.system(size: 20, weight: .medium))
+                   .foregroundColor(.white)
+                   .multilineTextAlignment(.center)
+                   .padding(.horizontal, 30)
                            
                 Spacer()
                 
-                // زر السهم في نافقيشن
+                // //The arrow button
                 HStack {
                     Spacer()
                     Button(action: {}) {

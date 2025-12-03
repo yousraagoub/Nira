@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "eyeIcon.png",
+      "filename" : "NiraLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "NiraLogo 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "NiraLogo 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

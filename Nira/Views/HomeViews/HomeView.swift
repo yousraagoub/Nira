@@ -45,7 +45,7 @@ struct HomeView: View {
         .navigationDestination(for: NavigationRoute.self) { route in
             switch route {
             case .splash: SplashView()
-            case .about: SplashView()
+            case .about: AboutView()
             case .insights: SplashView()
             case .memory: SplashView()
             case .feedback: SplashView()

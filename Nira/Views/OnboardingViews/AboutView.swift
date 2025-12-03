@@ -3,8 +3,8 @@ import SwiftUI
 struct AboutView: View {
     var body: some View {
         ZStack {
-                    // Background Color
-                    Color(red: 48/255, green: 95/255, blue: 102/255)                         .ignoresSafeArea()
+            // Background Color
+            Color.darkTeal.ignoresSafeArea()
             VStack(spacing: 30) {
                 
                 // زر الاكس فيه نافقيشن
@@ -32,7 +32,7 @@ struct AboutView: View {
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                 
-                Image("brainLogo")
+                Image("NiraLogo")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 160, height: 160)
