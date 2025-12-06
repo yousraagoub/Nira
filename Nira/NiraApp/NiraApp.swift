@@ -34,7 +34,7 @@ struct NiraApp: App {
     var body: some Scene {
         WindowGroup {
                 // The root screen is splash
-            SplashView()
+            RootView()
 //                    .navigationDestination(for: String.self) { screen in
 //                        switch screen {
 //                        case "splash":

@@ -6,12 +6,14 @@
 //
 import SwiftUI
 
+import SwiftUI
+
 struct HomeView: View {
     @Binding var path: NavigationPath
 
     var body: some View {
         ZStack {
-            Color.brightGray.ignoresSafeArea(.all)
+            Color.brightGray.ignoresSafeArea()
 
             VStack {
                 HomeButtonStyle(systemName: "eye") {
@@ -20,7 +22,7 @@ struct HomeView: View {
 
                 Text("Eye Tracking")
                     .foregroundColor(Color.darkTeal)
-                    .font(Font.system(size: 32, weight: .bold))
+                    .font(.system(size: 32, weight: .bold))
                     .padding(.bottom, 100)
 
                 HomeButtonStyle(systemName: "brain.head.profile") {
@@ -29,7 +31,7 @@ struct HomeView: View {
 
                 Text("Memory")
                     .foregroundColor(Color.darkTeal)
-                    .font(Font.system(size: 32, weight: .bold))
+                    .font(.system(size: 32, weight: .bold))
             }
         }
         .toolbar {
