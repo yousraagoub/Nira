@@ -193,17 +193,17 @@ struct EyeTrackingView: View {
                         .fill(Color(red: 232/255, green: 236/255, blue: 240/255))
 
                     VStack {
-                        HStack {
-                            circleButton(icon: "xmark") {
-                                path.append("home") // Navigate back
-                            }
-                            Spacer()
-                            circleButton(icon: "arrow.right") {
-                                // Forward action
-                            }
-                        }
-                        .padding(.horizontal, 10)
-                        .padding(.top, 10)
+//                        HStack {
+//                            circleButton(icon: "xmark") {
+//                                path.append("home") // Navigate back
+//                            }
+//                            Spacer()
+//                            circleButton(icon: "arrow.right") {
+//                                // Forward action
+//                            }
+//                        }
+//                        .padding(.horizontal, 10)
+//                        .padding(.top, 10)
 
                         Text("Track With Your\nEyes")
                             .font(.system(size: 24, weight: .semibold))
@@ -237,6 +237,25 @@ struct EyeTrackingView: View {
                 .padding(.horizontal, 20)
 
                 Spacer()
+            }
+        }.toolbar {
+//            ToolbarItem(placement: .principal) {
+//                Text("Track With Your\nEyes")
+//                    .font(.system(size: 24, weight: .bold))
+//                    .foregroundColor(.veryDarkTeal)
+//            }
+
+            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarButtonStyle(systemName: "arrow.right") {
+                    if !path.isEmpty {
+                        path.removeLast()
+                    }
+                }
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                ToolbarButtonStyle(systemName: "xmark") {
+                    path = NavigationPath()
+                }
             }
         }
         .onChange(of: lookAtPoint) { newValue in
@@ -284,5 +303,11 @@ struct EyeTrackingView: View {
     func moveBall() {
         ballYPosition += ballSpeed
         if ballYPosition > 200 { ballYPosition = 200 }
+    }
+}
+
+#Preview {
+    NavigationStack {
+        EyeTrackingView(path: .constant(NavigationPath()))
     }
 }
