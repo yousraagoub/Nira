@@ -15,8 +15,6 @@ struct ToolbarButtonStyle: View {
         }
         .buttonStyle(.plain)
         .background(Color.whiteWhite)
-        .glassEffect()
-        
     }
 }
 
