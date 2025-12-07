@@ -124,6 +124,7 @@ struct FeedbackExactView: View {
                     // 🔄 REPEAT BUTTON
                     Button {
                         dismiss()
+                        path.removeLast()
                     } label: {
                         Circle()
                             .fill(Color(red: 25/255, green: 98/255, blue: 106/255))

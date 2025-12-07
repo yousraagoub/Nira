@@ -221,7 +221,7 @@ struct EyeTrackingView: View {
                             .stroke(Color.gray, lineWidth: 8)
 
                             Circle()
-                                .fill(Color.blue)
+                                .fill(Color.darkTeal)
                                 .frame(width: 60, height: 60)
                                 .position(
                                     x: screenWidth / 2 - 20,

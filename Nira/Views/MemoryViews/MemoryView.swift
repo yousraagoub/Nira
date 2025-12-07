@@ -6,14 +6,13 @@
 //
 import SwiftUI
 import SwiftUI
-
 struct MemoryView: View {
     @Binding var path: NavigationPath
     @State private var flipped = false
 
-    // 👇 نختار مجموعة صورة عشوائية عند فتح الشاشة
-    @State private var currentSet: MemoryImageSet = memoryImageSets.randomElement() ?? MemoryImageSet(
-        imageName: "Image1",
+    // نعيّن قيمة افتراضية، وبعدين نغيرها في onAppear
+    @State private var currentSet: MemoryImageSet = memoryImageSets.first ?? MemoryImageSet(
+        imageName: "Image",
         questions: []
     )
 
@@ -72,8 +71,16 @@ struct MemoryView: View {
                 }
             }
         }
+        .onAppear {
+            // 🔁 كل مرة تظهر الشاشة: اختاري set عشوائي + رجّعي الكرت للوضع الأول
+            if let randomSet = memoryImageSets.randomElement() {
+                currentSet = randomSet
+            }
+            flipped = false
+        }
     }
 }
+
 struct MemoryCardView: View {
     @Binding var flipped: Bool
     var frontImage: Image = Image(systemName: "photo")
@@ -111,49 +118,79 @@ struct MemoryCardView: View {
 
 let memoryImageSets: [MemoryImageSet] = [
     MemoryImageSet(
-        imageName: "Image",   // استبدليه باسم الصورة الأولى في Assets
+        imageName: "Image",
         questions: [
             MemoryQuestion(
                 text: "How many windows were visible?",
-                options: ["Six windows", "Five windows"],
-                correctOption: "Five windows",
-                relatedImageName: "Image 1"
+                options: ["Six", "Five"],
+                correctOption: "Five",
+                relatedImageName: "Image"
             ),
             MemoryQuestion(
                 text: "What type of tree was at the bottom?",
                 options: ["Round tree", "Pine tree"],
                 correctOption: "Round tree",
-                relatedImageName: "Image 1"
+                relatedImageName: "Image"
             ),
             MemoryQuestion(
                 text: "Was the house tilted?",
                 options: ["No", "Yes"],
                 correctOption: "Yes",
+                relatedImageName: "Image"
+            )
+        ]
+    ),
+    MemoryImageSet(
+        imageName: "Image 1",
+        questions: [
+            MemoryQuestion(
+                text: "How many cups were in the picture?",
+                options: ["Three", "Four"],
+                correctOption: "Four",
+                relatedImageName: "Image 1"
+            ),
+            MemoryQuestion(
+                text: "How many people had their legs crossed?",
+                options: ["One", "Two"],
+                correctOption: "One",
+                relatedImageName: "Image 1"
+            ),
+            MemoryQuestion(
+                text: "Which hand did the man hold his cup with?",
+                options: ["Left hand", "Right hand"],
+                correctOption: "Left hand",
                 relatedImageName: "Image 1"
             )
         ]
     ),
     MemoryImageSet(
-        imageName: "Image 1",   // استبدليه باسم الصورة الثانية في Assets
+        imageName: "Image 2",
         questions: [
             MemoryQuestion(
-                text: "How many cups were in the picture?",
-                options: ["Three cups", "Four cups"],
-                correctOption: "Four cups",
-                relatedImageName: "Image"
+                text: "How many tulip flowers were in the picture?",
+                options: ["Three", "Two"],
+                correctOption: "Two",
+                relatedImageName: "Image 2"
             ),
             MemoryQuestion(
-                text: "How many people had their legs crossed?",
-                options: ["One person", "Two person"],
-                correctOption: "One person",
-                relatedImageName: "Image"
+                text: "What shape is located in the middle of the picture?",
+                options: ["Tulip", "Sunflower"],
+                correctOption: "Tulip",
+                relatedImageName: "Image 2"
             ),
             MemoryQuestion(
-                text: "which hand did the man hold his cup with?",
-                options: ["Left hand", "Right hand"],
-                correctOption: "Left hand",
-                relatedImageName: "Image"
+                text: "How many tiny flowers?",
+                options: ["Five", "Four"],
+                correctOption: "Five",
+                relatedImageName: "Image 2"
+            ),
+            MemoryQuestion(
+                text: "How many total flowers appear to have five petals?",
+                options: ["Five", "Seven"],
+                correctOption: "Five",
+                relatedImageName: "Image 2"
             )
+
         ]
     )
 ]
