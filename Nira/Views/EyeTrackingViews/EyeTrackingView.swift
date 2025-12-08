@@ -205,7 +205,7 @@ struct EyeTrackingView: View {
 //                        .padding(.horizontal, 10)
 //                        .padding(.top, 10)
 
-                        Text("Track With Your\nEyes")
+                        Text("Focus on the ball")
                             .font(.system(size: 24, weight: .semibold))
                             .multilineTextAlignment(.center)
                             .padding(.top, -25)
@@ -239,19 +239,7 @@ struct EyeTrackingView: View {
                 Spacer()
             }
         }.toolbar {
-//            ToolbarItem(placement: .principal) {
-//                Text("Track With Your\nEyes")
-//                    .font(.system(size: 24, weight: .bold))
-//                    .foregroundColor(.veryDarkTeal)
-//            }
 
-            ToolbarItem(placement: .topBarTrailing) {
-                ToolbarButtonStyle(systemName: "arrow.right") {
-                    if !path.isEmpty {
-                        path.removeLast()
-                    }
-                }
-            }
             ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "xmark") {
                     path = NavigationPath()
