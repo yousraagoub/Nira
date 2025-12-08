@@ -58,6 +58,17 @@
         }
       }
     },
+    "Eye Tracking Training" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تدريب تتبع العين"
+          }
+        }
+      }
+    },
     "Five" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -216,7 +227,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتبع العينين"
+            "value" : "تدريب الذاكرة"
           }
         }
       }

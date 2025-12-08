@@ -205,11 +205,11 @@ struct EyeTrackingView: View {
 //                        .padding(.horizontal, 10)
 //                        .padding(.top, 10)
 
-                        Text("Focus on the ball")
-                            .font(.system(size: 24, weight: .semibold))
-                            .multilineTextAlignment(.center)
-                            .padding(.top, -25)
-                            .foregroundColor(Color.veryDarkTeal)
+//                        Text("Focus on the ball")
+//                            .font(.system(size: 24, weight: .semibold))
+//                            .multilineTextAlignment(.center)
+//                            .padding(.top, -25)
+//                            .foregroundColor(Color.veryDarkTeal)
 
                         Spacer()
 
@@ -239,8 +239,14 @@ struct EyeTrackingView: View {
 
                 Spacer()
             }
-        }.toolbar {
-
+        }
+        .toolbar{
+           
+            ToolbarItem(placement: .principal) {
+                Text("Focus on the ball")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(.veryDarkTeal)
+            }
             ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "xmark") {
                     path = NavigationPath()
