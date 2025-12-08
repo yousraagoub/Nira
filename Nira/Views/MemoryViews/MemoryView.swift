@@ -121,21 +121,21 @@ let memoryImageSets: [MemoryImageSet] = [
         imageName: "Image",
         questions: [
             MemoryQuestion(
-                text: "How many windows were visible?",
-                options: ["Six", "Five"],
-                correctOption: "Five",
+                text: String(localized:"How many windows were visible?"),
+                options: [String(localized:"Six"), String(localized:"Five")],
+                correctOption: String(localized:"Five"),
                 relatedImageName: "Image"
             ),
             MemoryQuestion(
-                text: "What type of tree was at the bottom?",
-                options: ["Round tree", "Pine tree"],
-                correctOption: "Round tree",
+                text: String(localized:"What type of tree was at the bottom?"),
+                options: [String(localized:"Round tree"), String(localized:"Pine tree")],
+                correctOption: String(localized:"Round tree"),
                 relatedImageName: "Image"
             ),
             MemoryQuestion(
-                text: "Was the house tilted?",
-                options: ["No", "Yes"],
-                correctOption: "Yes",
+                text: String(localized:"Was the house tilted?"),
+                options: [String(localized:"No"), String(localized:"Yes")],
+                correctOption: String(localized:"Yes"),
                 relatedImageName: "Image"
             )
         ]
@@ -144,21 +144,21 @@ let memoryImageSets: [MemoryImageSet] = [
         imageName: "Image 1",
         questions: [
             MemoryQuestion(
-                text: "How many cups were in the picture?",
-                options: ["Three", "Four"],
-                correctOption: "Four",
+                text: String(localized:"How many cups were in the picture?"),
+                options: [String(localized:"Three"), String(localized:"Four")],
+                correctOption: String(localized:"Four"),
                 relatedImageName: "Image 1"
             ),
             MemoryQuestion(
-                text: "How many people had their legs crossed?",
-                options: ["One", "Two"],
-                correctOption: "One",
+                text: String(localized:"How many people had their legs crossed?"),
+                options: [String(localized:"One"), String(localized:"Two")],
+                correctOption: String(localized:"One"),
                 relatedImageName: "Image 1"
             ),
             MemoryQuestion(
-                text: "Which hand did the man hold his cup with?",
-                options: ["Left hand", "Right hand"],
-                correctOption: "Left hand",
+                text: String(localized:"Which hand did the man hold his cup with?"),
+                options: [String(localized:"Left hand"), String(localized:"Right hand")],
+                correctOption: String(localized:"Left hand"),
                 relatedImageName: "Image 1"
             )
         ]
@@ -167,27 +167,27 @@ let memoryImageSets: [MemoryImageSet] = [
         imageName: "Image 2",
         questions: [
             MemoryQuestion(
-                text: "How many tulip flowers were in the picture?",
-                options: ["Three", "Two"],
-                correctOption: "Two",
+                text: String(localized:"How many tulip flowers were in the picture?"),
+                options: [String(localized:"Three"), String(localized:"Two")],
+                correctOption: String(localized:"Two"),
                 relatedImageName: "Image 2"
             ),
             MemoryQuestion(
-                text: "What shape is located in the middle of the picture?",
-                options: ["Tulip", "Sunflower"],
-                correctOption: "Tulip",
+                text: String(localized:"What shape is located in the middle of the picture?"),
+                options: [String(localized:"Tulip"), String(localized:"Sunflower")],
+                correctOption: String(localized:"Tulip"),
                 relatedImageName: "Image 2"
             ),
             MemoryQuestion(
-                text: "How many tiny flowers?",
-                options: ["Five", "Four"],
-                correctOption: "Five",
+                text: String(localized:"How many tiny flowers?"),
+                options: [String(localized:"Five"), String(localized:"Four")],
+                correctOption: String(localized:"Five"),
                 relatedImageName: "Image 2"
             ),
             MemoryQuestion(
-                text: "How many total flowers appear to have five petals?",
-                options: ["Five", "Seven"],
-                correctOption: "Five",
+                text: String(localized:"How many total flowers appear to have five petals?"),
+                options: [String(localized:"Five"), String(localized:"Seven")],
+                correctOption: String(localized:"Five"),
                 relatedImageName: "Image 2"
             )
 
