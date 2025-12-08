@@ -70,7 +70,7 @@ The shorter your exercise, the stronger your visual processing abilities.
                     Button(action: {
                         path.append("about2")   // 👈 الانتقال للصفحة الثانية
                     }) {
-                        Image(systemName: "hand.tap.fill")
+                        Image(systemName: "arrow.right")
                             .font(.system(size: 26, weight: .bold))
                             .foregroundColor(Color.brightGray)
                             .frame(width: 65, height: 65)

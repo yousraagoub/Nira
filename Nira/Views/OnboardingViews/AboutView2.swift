@@ -57,9 +57,9 @@ struct AboutView2: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        path.append("about")   // 👈 يرجع للصفحة الأولى
+                        path = NavigationPath()
                     }) {
-                        Image(systemName: "hand.tap.fill")
+                        Image(systemName: "arrow.right")
                             .font(.system(size: 26, weight: .bold))
                             .foregroundColor(Color.brightGray)
                             .frame(width: 65, height: 65)
