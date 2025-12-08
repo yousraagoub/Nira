@@ -160,6 +160,9 @@ import SwiftUI
 
 struct EyeTrackingView: View {
     @Binding var path: NavigationPath
+    @StateObject private var feedbackViewModel = FeedbackViewModel()
+    @State private var exerciseStartTime = CACurrentMediaTime()
+
     
     @State var eyeGazeActive: Bool = true
     @State var lookAtPoint: CGPoint?
@@ -260,8 +263,22 @@ struct EyeTrackingView: View {
             lastUpdateTime = now
             updateStability(using: newPoint, delta: delta)
             lastLookAtPoint = newPoint
+            
+        }
+        //-----------------------------
+        .onAppear {
+            exerciseStartTime = CACurrentMediaTime()
+        }
+        .sheet(isPresented: $feedbackViewModel.showFeedback) {
+            FeedbackExactView(
+                isCorrect: true,
+                duration: feedbackViewModel.duration,
+                path: $path
+            )
         }
     }
+
+
 
     func circleButton(icon: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
@@ -297,8 +314,17 @@ struct EyeTrackingView: View {
 
     func moveBall() {
         ballYPosition += ballSpeed
-        if ballYPosition > 200 { ballYPosition = 200 }
+        if ballYPosition > 200 {
+            ballYPosition = 200
+            
+            // 🟢 EXERCISE COMPLETED SUCCESSFULLY
+            let endTime = CACurrentMediaTime()
+            feedbackViewModel.duration = endTime - exerciseStartTime
+            feedbackViewModel.feedbackIsCorrect = true
+            feedbackViewModel.showFeedback = true
+        }
     }
+
 }
 
 #Preview {
