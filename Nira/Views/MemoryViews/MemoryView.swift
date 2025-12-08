@@ -41,14 +41,15 @@ struct MemoryView: View {
                             }
 
                         } label: {
-                            Image(systemName: "arrow.right")
+                            Image(systemName: "checkmark")
                                 .font(.system(size: 24, weight: .medium))
-                                .foregroundColor(.white)
+                                .foregroundColor(Color.brightGray)
                                 .padding(16)
-                                .background(Color.darkTeal)
-                                .clipShape(Circle())
+                                
                         }
-                        .glassEffect(.clear)
+                        .buttonStyle(.plain)
+                        .glassEffect(.clear.interactive().tint(Color.darkTeal))
+                        .clipShape(Circle())
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 12)
@@ -64,7 +65,7 @@ struct MemoryView: View {
             }
 
             ToolbarItem(placement: .topBarLeading) {
-                ToolbarButtonStyle(systemName: "arrow.left") {
+                ToolbarButtonStyle(systemName: "xmark") {
                     if !path.isEmpty {
                         path.removeLast()
                     }

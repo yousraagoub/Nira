@@ -209,6 +209,7 @@ struct EyeTrackingView: View {
                             .font(.system(size: 24, weight: .semibold))
                             .multilineTextAlignment(.center)
                             .padding(.top, -25)
+                            .foregroundColor(Color.veryDarkTeal)
 
                         Spacer()
 

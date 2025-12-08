@@ -67,7 +67,7 @@ struct FeedbackExactView: View {
         if isCorrect {
             return formattedDuration
         } else {
-            return "Try Again"
+            return String(localized:"Try Again")
         }
     }
 
@@ -77,9 +77,9 @@ struct FeedbackExactView: View {
         let seconds = totalSeconds % 60
 
         if minutes == 0 {
-            return "\(seconds) sec"
+            return String(localized:"\(seconds) sec")
         } else {
-            return "\(minutes) min \(seconds) sec"
+            return String(localized:"\(minutes) min \(seconds) sec")
         }
     }
 
