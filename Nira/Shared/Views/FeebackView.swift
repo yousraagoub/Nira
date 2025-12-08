@@ -14,44 +14,48 @@ struct FeedbackCircleView: View {
     let isCorrect: Bool
 
     private var circleColor: Color {
-        if isCorrect {
-            // 0E9310
-            return Color(
-                red: 14/255,
-                green: 147/255,
-                blue: 16/255
-            )
-        } else {
-            // D65902
-            return Color(
-                red: 214/255,
-                green: 89/255,
-                blue: 2/255
-            )
-        }
+        return Color.brightGray
+//        if isCorrect {
+//            // 0E9310
+//            return Color(
+//                red: 14/255,
+//                green: 147/255,
+//                blue: 16/255
+//            )
+//        } else {
+//            // D65902
+//            return Color(
+//                red: 214/255,
+//                green: 89/255,
+//                blue: 2/255
+//            )
+//        }
     }
 
     private var iconName: String {
         isCorrect ? "hands.clap.fill" : "repeat"
     }
+    private var iconColor: Color {
+        isCorrect ? Color.darkGreen : Color.darkOrange
+    }
 
     var body: some View {
         ZStack {
-            Circle()
-                .fill(circleColor)
-                .frame(width: 300, height: 300)
-                .shadow(
-                    color: Color.black.opacity(0.18),
-                    radius: 25,
-                    x: 0,
-                    y: 15
-                )
+//            Circle()
+//                .fill(circleColor)
+//                .frame(width: 300, height: 300)
+//                .shadow(
+//                    color: Color.black.opacity(0.18),
+//                    radius: 25,
+//                    x: 0,
+//                    y: 15
+//                )
 
             Image(systemName: iconName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 110, height: 110)
-                .foregroundColor(.white)
+                .frame(width: 230, height: 230)
+                .foregroundColor(iconColor)
         }
     }
 }
@@ -77,15 +81,15 @@ struct FeedbackExactView: View {
         let seconds = totalSeconds % 60
 
         if minutes == 0 {
-            return String(localized:"\(seconds) sec")
+            return String(localized:"\(seconds) seconds")
         } else {
-            return String(localized:"\(minutes) min \(seconds) sec")
+            return String(localized:"\(minutes) minutes \(seconds) seconds")
         }
     }
 
     var body: some View {
         ZStack {
-            Color.white.ignoresSafeArea()
+            Color.brightGray.ignoresSafeArea()
 
             VStack(spacing: 0) {
                 Spacer().frame(height: 80)

@@ -59,7 +59,8 @@ struct AboutView2: View {
                     Button(action: {
                         path.append("about")   // 👈 يرجع للصفحة الأولى
                     }) {
-                        Image(systemName: "hand.tap.fill")
+                        Image(systemName: "arrow.backward")
+                            .flipsForRightToLeftLayoutDirection(true)
                             .font(.system(size: 26, weight: .bold))
                             .foregroundColor(Color.brightGray)
                             .frame(width: 65, height: 65)

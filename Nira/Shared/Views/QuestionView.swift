@@ -40,8 +40,10 @@ struct QuestionView: View {
                     path = NavigationPath()
                 } label: {
                     Image(systemName: "xmark")
+                        .foregroundColor(.veryDarkTeal)
                 }
             }
+
         }
         .onAppear {
             feedbackViewModel.startQuestion()
@@ -100,7 +102,7 @@ struct QuestionView: View {
             Text(option)
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(isSelected ? .veryDarkTeal : .white)
-                .frame(width: 160, height: 80)
+                .frame(width: 140, height: 60)
                 .background(
                     RoundedRectangle(cornerRadius: 40)
                         .fill(isSelected ? .white : .darkTeal)
@@ -117,32 +119,32 @@ struct QuestionView: View {
                 path.removeLast()
                 // show image again (ممكن لاحقًا تربطينها بعرض الصورة)
             } label: {
-                ZStack {
-                    Circle()
-                        .fill(.ultraThinMaterial)
-                        .shadow(radius: 16)
-                    Image(systemName: "photo.on.rectangle")
-                        .font(.system(size: 26))
-                        .foregroundColor(primaryTeal)
-                }
-                .frame(width: 80, height: 80)
+                Image(systemName: "arrow.backward")
+                    .flipsForRightToLeftLayoutDirection(true)
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundColor(Color.veryDarkTeal)
+                    .padding(16)
             }
+            .buttonStyle(.plain)
+            .glassEffect(.regular.interactive().tint(Color.whiteWhite.opacity(0.5)))
+            .clipShape(Circle())
+            .padding(.bottom, -20)
+            
 
             Spacer()
 
             Button {
                 feedbackViewModel.confirmAnswer()
             } label: {
-                ZStack {
-                    Circle()
-                        .fill(.darkTeal)
-                        .shadow(radius: 20)
-                    Image(systemName: "checkmark")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(.white)
-                }
-                .frame(width: 80, height: 80)
+                Image(systemName: "checkmark")
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundColor(Color.brightGray)
+                    .padding(16)
             }
+            .buttonStyle(.plain)
+            .glassEffect(.clear.interactive().tint(Color.darkTeal))
+            .clipShape(Circle())
+            .padding(.bottom, -20)
             .disabled(viewModel.selectedOption == nil)
             .opacity(viewModel.selectedOption == nil ? 0.4 : 1)
         }

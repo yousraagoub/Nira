@@ -47,7 +47,6 @@ struct RootView: View {
                         case "memory":
                             MemoryView(path: $path)
                                 .navigationBarBackButtonHidden(true)
-                             //   .navigationTitle("Memory Training")
 
                         default:
                             EmptyView()

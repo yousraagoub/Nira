@@ -41,7 +41,8 @@ struct MemoryView: View {
                             }
 
                         } label: {
-                            Image(systemName: "checkmark")
+                            Image(systemName: "arrow.forward")
+                                .flipsForRightToLeftLayoutDirection(true)
                                 .font(.system(size: 24, weight: .medium))
                                 .foregroundColor(Color.brightGray)
                                 .padding(16)
