@@ -111,11 +111,11 @@ struct EyeTrackingView: View {
             FeedbackExactView(
                 isCorrect: true,
                 duration: feedbackViewModel.duration,
-                path: $path
-            )
-        }
-    }
-
+                path: $path)
+            .presentationDetents([.medium])
+            .interactiveDismissDisabled(true)
+        }}
+        
 
 
     func circleButton(icon: String, action: @escaping () -> Void) -> some View {
