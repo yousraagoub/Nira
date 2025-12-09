@@ -246,7 +246,7 @@ struct EyeTrackingView: View {
         .toolbar{
            
             ToolbarItem(placement: .principal) {
-                Text("Focus on the ball")
+                Text("Visual Perception")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.veryDarkTeal)
             }

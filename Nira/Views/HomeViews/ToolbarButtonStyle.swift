@@ -18,3 +18,16 @@ struct ToolbarButtonStyle: View {
     }
 }
 
+struct ToolbarBottomButtonStyle: View {
+    let systemName: String
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: systemName)
+                .foregroundColor(Color.brightGray)
+//                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .buttonStyle(.plain)
+
+    }
+}

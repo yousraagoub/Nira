@@ -15,17 +15,17 @@ struct HomeView: View {
 
             VStack {
                 HomeButtonStyle(systemName: "eye") {
-                    path.append("eyeTracking")
+                    path.append("aboutEye")
                     
                 }
 
-                Text("Eye Tracking")
+                Text("Visual Perception")
                     .foregroundColor(Color.darkTeal)
                     .font(.system(size: 32, weight: .bold))
                     .padding(.bottom, 100)
 
                 HomeButtonStyle(systemName: "brain.head.profile") {
-                    path.append("memory")
+                    path.append("aboutMemory")
                 }
                 Text("Memory")
                     .foregroundColor(Color.darkTeal)
@@ -38,11 +38,6 @@ struct HomeView: View {
                     path.append("about")
                 }
             }
-//            ToolbarItem(placement: .topBarTrailing) {
-//                ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
-//                    path.append("insight")
-//                }
-//            }
         }
     }
 }

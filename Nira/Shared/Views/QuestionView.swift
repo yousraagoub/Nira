@@ -30,7 +30,7 @@ struct QuestionView: View {
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Memory Training")
+                Text("Memory")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.veryDarkTeal)
             }
