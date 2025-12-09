@@ -72,6 +72,11 @@ struct MemoryView: View {
                     }
                 }
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarButtonStyle(systemName: "info") {
+                    path.append("aboutMemory")
+                }
+            }
         }
         .onAppear {
             // 🔁 كل مرة تظهر الشاشة: اختاري set عشوائي + رجّعي الكرت للوضع الأول

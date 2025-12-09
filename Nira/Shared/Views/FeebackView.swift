@@ -13,49 +13,23 @@ import SwiftUI
 struct FeedbackCircleView: View {
     let isCorrect: Bool
 
-    private var circleColor: Color {
-        return Color.brightGray
-//        if isCorrect {
-//            // 0E9310
-//            return Color(
-//                red: 14/255,
-//                green: 147/255,
-//                blue: 16/255
-//            )
-//        } else {
-//            // D65902
-//            return Color(
-//                red: 214/255,
-//                green: 89/255,
-//                blue: 2/255
-//            )
-//        }
-    }
-
     private var iconName: String {
-        isCorrect ? "hands.clap.fill" : "repeat"
+        isCorrect ? "checkmark" : "xmark"
     }
-    private var iconColor: Color {
-        isCorrect ? Color.darkGreen : Color.darkOrange
+    private var heartColor: Color {
+        isCorrect ? Color.greenyheart : Color.pinkyheart
     }
 
     var body: some View {
         ZStack {
-//            Circle()
-//                .fill(circleColor)
-//                .frame(width: 300, height: 300)
-//                .shadow(
-//                    color: Color.black.opacity(0.18),
-//                    radius: 25,
-//                    x: 0,
-//                    y: 15
-//                )
-
+            Image(systemName: "heart.fill")
+                .font(Font.system(size: 300))
+                .foregroundColor(heartColor)
             Image(systemName: iconName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 230, height: 230)
-                .foregroundColor(iconColor)
+                .frame(width: 130, height: 130)
+                .foregroundColor(Color.brightGray)
         }
     }
 }
