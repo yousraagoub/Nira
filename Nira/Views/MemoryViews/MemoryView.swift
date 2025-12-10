@@ -1,10 +1,11 @@
+
+
 //
 //  MemoryView.swift
 //  Nira
 //
 //  Created by Yousra Abdelrahman on 11/06/1447 AH.
 //
-import SwiftUI
 import SwiftUI
 struct MemoryView: View {
     @Binding var path: NavigationPath
@@ -45,22 +46,25 @@ struct MemoryView: View {
                                 .flipsForRightToLeftLayoutDirection(true)
                                 .font(.system(size: 24, weight: .medium))
                                 .foregroundColor(Color.brightGray)
-                                .padding(16)
+                            //Apple minimum tap size
+                                .frame(width: 44, height: 44)
                                 
                         }
                         .buttonStyle(.plain)
                         .glassEffect(.clear.interactive().tint(Color.darkTeal))
                         .clipShape(Circle())
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 12)
+                    // Apple-recommended padding
+                    .padding(.horizontal, 16)
+                    //Apple safe area
+                    .padding(.bottom, 16)
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 16)
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
-                Text("Memory")
+                Text("Memory Training")
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.veryDarkTeal)
             }
@@ -70,11 +74,6 @@ struct MemoryView: View {
                     if !path.isEmpty {
                         path.removeLast()
                     }
-                }
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                ToolbarButtonStyle(systemName: "info") {
-                    path.append("aboutMemory")
                 }
             }
         }
@@ -217,3 +216,4 @@ struct MemoryView_PreviewWrapper: View {
 #Preview {
     MemoryView_PreviewWrapper()
 }
+

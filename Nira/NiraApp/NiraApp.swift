@@ -5,14 +5,13 @@
 //  Created by Yousra Abdelrahman on 05/06/1447 AH.
 //
 import UIKit
-
 import SwiftUI
 import SwiftData
 
 @main
 struct NiraApp: App {
     @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
-    
+
 //    enum Screen: Hashable {
 //        case splash
 //        case about
