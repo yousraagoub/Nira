@@ -17,7 +17,7 @@ struct EyeTrackingView: View {
     @State var isWinking: Bool = false
     
     @State var ballYPosition: CGFloat = 20
-    @State var ballSpeed: CGFloat = 2.0
+    @State var ballSpeed: CGFloat = 10.0 // it was 2.0
     @State var stabilityTimer: TimeInterval = 0
     
     @State private var lastLookAtPoint: CGPoint?
@@ -51,7 +51,7 @@ struct EyeTrackingView: View {
                             Path { path in
                                 let centerX = screenWidth / 2 - 20
                                 path.move(to: CGPoint(x: centerX, y: 0))
-                                path.addLine(to: CGPoint(x: centerX, y: 200))
+                                path.addLine(to: CGPoint(x: centerX, y: 400))
                             }
                             .stroke(Color.gray, lineWidth: 8)
 
@@ -63,7 +63,7 @@ struct EyeTrackingView: View {
                                     y: ballYPosition
                                 )
                         }
-                        .frame(height: 200)
+                        .frame(height: 400)
                         .padding(.bottom, 30)
 
                         Spacer()
