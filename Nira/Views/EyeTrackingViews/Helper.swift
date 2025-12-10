@@ -40,6 +40,3 @@ extension CGFloat {
             : self
     }
 }
-
-/// Reference - https://github.com/virakri/eye-tracking-ios-prototype
-

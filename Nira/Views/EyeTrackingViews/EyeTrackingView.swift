@@ -27,7 +27,7 @@ struct EyeTrackingView: View {
 
     var body: some View {
         ZStack {
-            Color(red: 232/255, green: 236/255, blue: 240/255)
+            Color(.brightGray)
                 .ignoresSafeArea()
 
             CustomARViewContainer(
@@ -41,7 +41,7 @@ struct EyeTrackingView: View {
             VStack(alignment: .leading, spacing: 20) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 50)
-                        .fill(Color(red: 232/255, green: 236/255, blue: 240/255))
+                        .fill(Color(.brightGray))
 
                     VStack {
 
@@ -152,8 +152,8 @@ struct EyeTrackingView: View {
 
     func moveBall() {
         ballYPosition += ballSpeed
-        if ballYPosition > 200 {
-            ballYPosition = 200
+        if ballYPosition > 400 {
+            ballYPosition = 400
             
             // 🟢 EXERCISE COMPLETED SUCCESSFULLY
             let endTime = CACurrentMediaTime()
