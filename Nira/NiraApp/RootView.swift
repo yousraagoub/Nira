@@ -39,9 +39,6 @@ struct RootView: View {
                             AboutMemoryView(path: $path)
                                 .navigationBarBackButtonHidden(true)
 
-                        case "insight":
-                            InsightsView(path: $path)
-                                .navigationBarBackButtonHidden(true)
 
                         case "eyeTracking":
                             EyeTrackingView(path: $path)
@@ -50,8 +47,8 @@ struct RootView: View {
                         case "memory":
                             MemoryView(path: $path)
                                 .navigationBarBackButtonHidden(true)
-                        case "eyeTrackingInstructions":
-                            EyeTrackingInstructions(path: $path)
+                        case "streak":
+                            streakView(path: $path)
                                 .navigationBarBackButtonHidden(true)
 
 

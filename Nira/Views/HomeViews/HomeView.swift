@@ -39,8 +39,8 @@ struct HomeView: View {
                 }
             }
             ToolbarItem(placement: .topBarLeading) {
-                ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
-                    path.append("insight")
+                ToolbarButtonStyle(systemName: "flame.fill") {
+                    path.append("streak")
                 }
             }
         }
