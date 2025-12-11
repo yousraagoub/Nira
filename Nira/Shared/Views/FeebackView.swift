@@ -35,14 +35,18 @@ struct FeedbackExactView: View {
     }
     
     private var formattedDuration: String {
-        let totalSeconds = Int(duration.rounded())
-        let minutes = totalSeconds / 60
-        let seconds = totalSeconds % 60
-        if minutes == 0 {
-            return "\(seconds) seconds"
-        } else {
-            return "\(minutes) minutes \(seconds) seconds"
-        }
+//        let totalSeconds = Int(duration.rounded())
+//        let minutes = totalSeconds / 60
+//        let seconds = totalSeconds % 60
+//        
+//        
+//        if minutes == 0 {
+//            return "\(seconds) seconds"
+//        } else {
+//            return "\(minutes) minutes \(seconds) seconds"
+//        }
+//        
+        return "Good job"
     }
     
     var body: some View {
