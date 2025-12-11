@@ -16,20 +16,21 @@ struct RootView: View {
             SplashView { showSplash = false }
         } else {
             NavigationStack(path: $path) {
-                
+                HomeView(path: $path)
+                    .navigationBarBackButtonHidden(true)
                 // Wrap the conditional root view in a single Group so modifiers can chain
-                Group {
-                    if !OnboardingState.hasSeenAbout {
-                        AboutView(path: $path)
-                            .navigationBarBackButtonHidden(true)
-                            .onAppear {
-                                OnboardingState.hasSeenAbout = true
-                            }
-                    } else {
-                        HomeView(path: $path)
-                            .navigationBarBackButtonHidden(true)
-                    }
-                }
+//                Group {
+//                    if !OnboardingState.hasSeenAbout {
+//                        AboutView(path: $path)
+//                            .navigationBarBackButtonHidden(true)
+//                            .onAppear {
+//                                OnboardingState.hasSeenAbout = true
+//                            }
+//                    } else {
+//                        HomeView(path: $path)
+//                            .navigationBarBackButtonHidden(true)
+//                    }
+//                }
                 // MARK: Navigation Destinations
                 .navigationDestination(for: String.self) { value in
                     switch value {
