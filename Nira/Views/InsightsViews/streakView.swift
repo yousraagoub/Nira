@@ -26,7 +26,7 @@ struct streakView: View {
             ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "xmark") {
                     if !path.isEmpty {
-                        path.removeLast()
+                        path = NavigationPath()
                     }
                 }
             }

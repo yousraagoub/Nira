@@ -64,10 +64,16 @@ struct MemoryView: View {
             ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "xmark") {
                     if !path.isEmpty {
-                        path.removeLast()
+                        path = NavigationPath()
                     }
                 }
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                ToolbarButtonStyle(systemName: "info") {
+                    path.append("aboutMemory")
+                }
+            }
+
         }
         .onAppear {
             if let randomSet = memoryImageSets.randomElement() {
