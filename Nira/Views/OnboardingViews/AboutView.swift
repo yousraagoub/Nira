@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct AboutView: View {
-    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
     @Binding var path: NavigationPath
     
     var body: some View {

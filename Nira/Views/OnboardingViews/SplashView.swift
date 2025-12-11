@@ -4,7 +4,6 @@ import SwiftData
 import SwiftUI
 
 struct SplashView: View {
-    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
     @State private var fadeIn = false
 
     var onFinish: () -> Void

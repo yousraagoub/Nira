@@ -10,61 +10,78 @@ import SwiftUI
 struct RootView: View {
     @State private var showSplash = true
     @State private var path = NavigationPath()
-
+    
     var body: some View {
         if showSplash {
-            SplashView {
-                // بعد انتهاء السبلتش، ادخلي على النافيقيشن
-                showSplash = false
-            }
+            SplashView { showSplash = false }
         } else {
             NavigationStack(path: $path) {
                 
-                // 👑 HomeView = أول شاشة دائماً
-                HomeView(path: $path)
-                    .navigationBarBackButtonHidden(true)
-
-                    // MARK: Navigation Destinations
-                    .navigationDestination(for: String.self) { value in
-                        switch value {
-
-                        case "about":
-                            AboutView(path: $path)
-                                .navigationBarBackButtonHidden(true)
-
-                        case "aboutEye":
+                // Wrap the conditional root view in a single Group so modifiers can chain
+                Group {
+                    if !OnboardingState.hasSeenAbout {
+                        AboutView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                            .onAppear {
+                                OnboardingState.hasSeenAbout = true
+                            }
+                    } else {
+                        HomeView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                    }
+                }
+                // MARK: Navigation Destinations
+                .navigationDestination(for: String.self) { value in
+                    switch value {
+                    case "aboutEye":
+                        if !OnboardingState.hasSeenAboutEye {
                             AboutEyeView(path: $path)
                                 .navigationBarBackButtonHidden(true)
-                        case "aboutMemory":
-                            AboutMemoryView(path: $path)
-                                .navigationBarBackButtonHidden(true)
-
-
-                        case "eyeTracking":
+                                .onAppear {
+                                    OnboardingState.hasSeenAboutEye = true
+                                }
+                        } else {
+                            // Skip AboutEye and go directly to exercise
                             EyeTrackingView(path: $path)
                                 .navigationBarBackButtonHidden(true)
-
-                        case "memory":
+                        }
+                        
+                    case "aboutMemory":
+                        if !OnboardingState.hasSeenAboutMemory {
+                            AboutMemoryView(path: $path)
+                                .navigationBarBackButtonHidden(true)
+                                .onAppear {
+                                    OnboardingState.hasSeenAboutMemory = true
+                                }
+                        } else {
                             MemoryView(path: $path)
                                 .navigationBarBackButtonHidden(true)
-                        case "streak":
-                            streakView(path: $path)
-                                .navigationBarBackButtonHidden(true)
-
-
-                        default:
-                            EmptyView()
                         }
+                        
+                    case "eyeTracking":
+                        EyeTrackingView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                        
+                    case "memory":
+                        MemoryView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                        
+                    case "streak":
+                        streakView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                        
+                    default:
+                        EmptyView()
                     }
-
-                    // For Memory questions
-                    .navigationDestination(for: MemoryQuestion.self) { question in
-                        QuestionView(
-                            viewModel: QuestionViewModel(question: question),
-                            path: $path
-                        )
-                        .navigationBarBackButtonHidden(true)
-                    }
+                }
+                // MemoryQuestion destination should be a sibling destination on the same view chain
+                .navigationDestination(for: MemoryQuestion.self) { question in
+                    QuestionView(
+                        viewModel: QuestionViewModel(question: question),
+                        path: $path
+                    )
+                    .navigationBarBackButtonHidden(true)
+                }
             }
         }
     }

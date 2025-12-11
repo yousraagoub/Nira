@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct NiraApp: App {
-    @AppStorage("hasSeenOnboarding") var hasSeenOnboarding: Bool = false
 
     var body: some Scene {
         WindowGroup {
