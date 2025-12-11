@@ -89,7 +89,7 @@ struct EyeTrackingView: View {
          
             ToolbarItem(placement: .topBarTrailing) {
                 ToolbarButtonStyle(systemName: "info") {
-                    path.append("aboutEye")
+                    path.append("aboutEyeManual")
                 }
             }
             

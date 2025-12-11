@@ -70,7 +70,7 @@ struct MemoryView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 ToolbarButtonStyle(systemName: "info") {
-                    path.append("aboutMemory")
+                    path.append("aboutMemoryManual")
                 }
             }
 

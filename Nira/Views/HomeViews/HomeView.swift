@@ -35,14 +35,14 @@ struct HomeView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 ToolbarButtonStyle(systemName: "info") {
-                    path.append("about")
+                    path.append("aboutManual")
                 }
             }
-            ToolbarItem(placement: .topBarLeading) {
-                ToolbarButtonStyle(systemName: "flame.fill") {
-                    path.append("streak")
-                }
-            }
+//            ToolbarItem(placement: .topBarLeading) {
+//                ToolbarButtonStyle(systemName: "flame.fill") {
+//                    path.append("streak")
+//                }
+//            }
         }
     }
 }

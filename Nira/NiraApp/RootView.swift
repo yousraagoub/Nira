@@ -57,6 +57,18 @@ struct RootView: View {
                             MemoryView(path: $path)
                                 .navigationBarBackButtonHidden(true)
                         }
+                    
+                    case "aboutManual":
+                        AboutView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                    case "aboutEyeManual":
+                        AboutEyeView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+                        
+                    case "aboutMemoryManual":
+                        AboutMemoryView(path: $path)
+                            .navigationBarBackButtonHidden(true)
+
                         
                     case "eyeTracking":
                         EyeTrackingView(path: $path)
