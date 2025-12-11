@@ -57,7 +57,8 @@ Look at the picture and memorize it, then move to then next page to answer quest
                 }
                 
             }
-            ToolbarItem(placement: .bottomBar) {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Spacer()
                 Button(action: {
                     // Goes to memory exercise
                     path.append("memory")

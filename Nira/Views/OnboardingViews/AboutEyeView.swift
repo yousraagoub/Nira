@@ -57,7 +57,8 @@ Focus your gaze on the circle until it moves downwards.
                 }
                 
             }
-            ToolbarItem(placement: .bottomBar) {
+            ToolbarItemGroup(placement: .bottomBar) {
+                Spacer()
                 Button(action: {
                     // Goes to eye tracking exercise
                     path.append("eyeTracking")
