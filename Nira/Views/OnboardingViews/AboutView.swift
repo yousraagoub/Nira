@@ -24,7 +24,7 @@ struct AboutView: View {
                 
                 Text("""
 Where you will enhances visual perception and strengthens memory through visual exercises.\n\n
-The shorter your exercise, the stronger your visual processing abilities.
+The more consistent you are with exercises, the stronger your visual processing abilities.
 """)
                 .font(.system(size: 20, weight: .medium))
                 .foregroundColor(.white)
