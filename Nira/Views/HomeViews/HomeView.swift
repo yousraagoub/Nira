@@ -33,12 +33,12 @@ struct HomeView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
+            ToolbarItem(placement: .topBarTrailing) {
                 ToolbarButtonStyle(systemName: "info") {
                     path.append("about")
                 }
             }
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: .topBarLeading) {
                 ToolbarButtonStyle(systemName: "chart.line.uptrend.xyaxis") {
                     path.append("insight")
                 }
