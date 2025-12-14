@@ -26,9 +26,9 @@ struct MemoryView: View {
                 
                 Spacer()
                 
-                if flipped {
+               // if flipped {
                     HStack {
-                        Spacer()
+//Spacer()
                         
                         Button {
                             // 👇 نختار سؤال عشوائي من أسئلة هذه الصورة
@@ -37,20 +37,23 @@ struct MemoryView: View {
                             }
                             
                         } label: {
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 24, weight: .medium))
-                                .foregroundColor(Color.brightGray)
-                                .frame(width: 44, height: 44)
+                            Text("Next")
+                                .font(.system(size: 24, weight: .semibold))
+                                .foregroundColor(flipped ? Color.brightGray : .gray.opacity(1.0))
+                                            .padding(.horizontal, 20)
+                                            .padding(.vertical, 12)
+                                            .frame(maxWidth: 200)
 
                             
                         }
                         .buttonStyle(.plain)
-                        .glassEffect(.clear.interactive().tint(Color.darkTeal))
-                        .clipShape(Circle())
+                        .glassEffect(.clear.interactive().tint(flipped ? Color.darkTeal: Color.darkTeal.opacity(0.8)))
+                        .clipShape(Capsule())
+                        .disabled(!flipped)
                     }
-                    .padding(.horizontal, 16)
+                   // .padding(.horizontal, 16)
                     .padding(.bottom, 16)
-                }
+               // }
             }
             .padding(.horizontal, 16)
         }
@@ -69,7 +72,7 @@ struct MemoryView: View {
                 }
             }
             ToolbarItem(placement: .topBarTrailing) {
-                ToolbarButtonStyle(systemName: "info") {
+                ToolbarButtonStyle(systemName: "questionmark") {
                     path.append("aboutMemoryManual")
                 }
             }

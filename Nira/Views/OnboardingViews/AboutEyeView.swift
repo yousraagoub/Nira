@@ -47,17 +47,18 @@ Focus your gaze on the circle until it moves downwards.
                     .font(.system(size: 24, weight: .bold))
                     .foregroundColor(.brightGray)
             }
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: {
-                    // Goes back to home screen
-                    path = NavigationPath()
-                }) {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color.darkTeal)
-                }
-                
-            }
-            ToolbarItemGroup(placement: .bottomBar) {
+            //            ToolbarItem(placement: .topBarLeading) {
+            //                Button(action: {
+            //                    // Goes back to home screen
+            //                    path = NavigationPath()
+            //                }) {
+            //                    Image(systemName: "xmark")
+            //                        .foregroundColor(Color.darkTeal)
+            //                }
+            //
+            //            }
+            if (OnboardingState.hasSeenAboutEye == false) {
+                ToolbarItemGroup(placement: .bottomBar) {
                 Spacer()
                 Button(action: {
                     // Goes to eye tracking exercise
@@ -67,6 +68,18 @@ Focus your gaze on the circle until it moves downwards.
                         .foregroundColor(.darkTeal)
                 }
             }
+        } else {
+            ToolbarItemGroup(placement: .topBarLeading) {
+               
+                Button(action: {
+                    // Goes to memory exercise
+                    path.removeLast()
+                }){
+                    Image(systemName: "arrow.backward")
+                        .foregroundColor(.darkTeal)
+                }
+            }
+        }
         }
     }
 }

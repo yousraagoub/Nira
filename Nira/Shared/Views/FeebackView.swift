@@ -30,7 +30,7 @@ struct FeedbackExactView: View {
         if isCorrect {
             return formattedDuration}
         else {
-            return "Try Again!"
+            return String(localized:"Try Again!")
         }
     }
     
@@ -46,7 +46,7 @@ struct FeedbackExactView: View {
 //            return "\(minutes) minutes \(seconds) seconds"
 //        }
 //        
-        return "Good job"
+        return String(localized:"Good job")
     }
     
     var body: some View {

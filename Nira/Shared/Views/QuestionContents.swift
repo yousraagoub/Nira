@@ -107,7 +107,7 @@ let memoryImageSets: [MemoryImageSet] = [
             ),
             MemoryQuestion(
                 text: String(localized:"What creature was flying outside?"),
-                options: [String(localized:"Butterfly."), String(localized:"Bird")],
+                options: [String(localized:"Butterfly"), String(localized:"Bird")],
                 correctOption: String(localized:"Butterfly"),
                 relatedImageName: "Image 4"
             )
@@ -168,7 +168,7 @@ let memoryImageSets: [MemoryImageSet] = [
                 relatedImageName: "Image 7"
             ),
             MemoryQuestion(
-                text: String(localized:"Wher Was the turtle placed on?"),
+                text: String(localized:"Where Was the turtle placed on?"),
                 options: [String(localized:"Top"), String(localized:"Middle")],
                 correctOption: String(localized:"Middle"),
                 relatedImageName: "Image 7"
@@ -197,7 +197,7 @@ let memoryImageSets: [MemoryImageSet] = [
                 relatedImageName: "Image 8"
             ),
             MemoryQuestion(
-                text: String(localized:"How many pencils were inside the pencil holder?"),
+                text: String(localized:"How many pencils were inside the pen holder?"),
                 options: [String(localized:"Two"), String(localized:"One")],
                 correctOption: String(localized:"Two"),
                 relatedImageName: "Image 8"
