@@ -9,12 +9,14 @@ This app addresses that challenge by providing interactive, gaze-based feedback.
 
 ---
 **2. Features**
+
 ***2.1 Eye-Tracking Focus Training:***
 - A moving visual object (ball) controlled by gaze
 - Object moves only if the user maintains focus for 300ms
 - Movement stops immediately when focus is lost
 - Trains attention **initiation and continuity**
 - Encourages sustained visual engagement
+  
 ***2.2 Visual Memory Training***
 - Users observe images
 - Follow-up questions test visual recall
