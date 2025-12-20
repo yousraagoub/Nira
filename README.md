@@ -1,45 +1,57 @@
-# NIRA APP:
-This application integrates eye-tracking and visual memory exercises to support individuals with visual memory and visual processing Disorder (VPD) in improving focus, attention continuity, and visual recall.
-The app is designed to train the brain to initiate and sustain visual attention through real-time feedback, enabling users to strengthen cognitive skills needed for daily-life independence.
+# NIRA APP (iOS)
+NIRA is an iOS application that integrates eye-tracking and visual memory exercises to support individuals with Visual Processing Disorder (VPD).
+The app helps users improve focus, sustained attention, and visual recall through real-time, gaze-based interaction and structured memory tasks.
+Its goal is to strengthen cognitive skills that support daily-life independence.
 
 ---
-**1. Core Concept**
-Sustained visual attention reinforces focus-related neural pathways. However, individuals with VPD often struggle to start focusing and maintain attention over time, especially with moving visual stimuli.
-This app addresses that challenge by providing interactive, gaze-based feedback.
+## Overview
+
+Individuals with VPD often experience difficulty initiating visual focus and maintaining attention over time—particularly when interacting with moving visual stimuli.
+NIRA addresses this challenge by combining real-time eye-tracking feedback with visual memory training, allowing users to actively train attention continuity and recall skills.
 
 ---
-**2. Features**
+## Features
 
-***2.1 Eye-Tracking Focus Training:***
-- A moving visual object (ball) controlled by gaze
-- Object moves only if the user maintains focus for 300ms
+**Eye-Tracking Focus Exercise:**
+- Gaze-controlled moving object (ball)
+- Object moves only after 300 ms of sustained focus
 - Movement stops immediately when focus is lost
-- Trains attention **initiation and continuity**
-- Encourages sustained visual engagement
+- Trains attention initiation and attention continuity
+- Encourages sustained visual engagement through real-time feedback
   
-***2.2 Visual Memory Training***
-- Users observe images
-- Follow-up questions test visual recall
-- Designed to improve visual memory accuracy
-- Targets one of the most common challenges in VPD
+**Visual Memory Exercise**
+- Users observe visual images
+- Follow-up questions assess visual recall
+- Improves accuracy of visual memory
+- Targets a core challenge associated with VPD
+
+---
+## Screenshots
+<img width="152" height="728" alt="VisualPerception" src="https://github.com/user-attachments/assets/8adfc590-eddf-4102-901e-909a12cfcb41" /> <img width="152" height="728" alt="MemoryImg" src="https://github.com/user-attachments/assets/92f67fb7-5c6f-41a5-8680-30b86f6033c0" /> <img width="152" height="728" alt="MemoryResult" src="https://github.com/user-attachments/assets/3c69accd-6585-4f56-a278-fffdbc8149c5" />
   
 ---
-**3. Target Users**
-- Individuals with Visual Processing Disorder (VPD)
-- Users with visual attention or visual memory challenges
+## Target Users
+- Individuals diagnosed with Visual Processing Disorder (VPD)
+- Users experiencing challenges with visual attention or visual memory
 
 ---
-
-**4. App Statement**
-Integrating eye-tracking features and visual-memory exercises to empower individuals with visual-memory issues to manage their daily lives independently.
+## Tech Stack
+- **Language:** Swift
+- **UI Framework:** SwiftUI
+- **Eye Tracking:** ARKit / Vision Framework
+- **Platform:** iOS
+- **Localization:** iOS Localization
 
 ---
-**Tech Stack**
-- Eye-tracking integration
-- Visual memory assessment module
-- Accessibility-oriented UI design
+## Installation
+1. Clone the repository.
+2. Open the project in Xcode.
+3. Select a compatible iOS device with eye-tracking support.
+4. Build and run the app.
 
-Status
-Project under active development.
+---
+## Project Status
+
+🚧 Under active development
 
 
