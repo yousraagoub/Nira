@@ -1,7 +1,7 @@
 # NIRA APP (iOS)
 NIRA is an iOS application that integrates eye-tracking and visual memory exercises to support individuals with Visual Processing Disorder (VPD).
 The app helps users improve focus, sustained attention, and visual recall through real-time, gaze-based interaction and structured memory tasks.
-Its goal is to strengthen cognitive skills that support daily-life independence.
+Its goal is to strengthen cognitive skills that support daily life independency.
 
 ---
 ## Overview
@@ -22,12 +22,12 @@ NIRA addresses this challenge by combining real-time eye-tracking feedback with 
 **Visual Memory Exercise**
 - Users observe visual images
 - Follow-up questions assess visual recall
-- Improves accuracy of visual memory
+- Improves the accuracy of visual memory
 - Targets a core challenge associated with VPD
 
 ---
 ## Screenshots
-<img width="252" height="628" alt="VisualPerception" src="https://github.com/user-attachments/assets/8adfc590-eddf-4102-901e-909a12cfcb41" /> <img width="252" height="628" alt="MemoryImg" src="https://github.com/user-attachments/assets/92f67fb7-5c6f-41a5-8680-30b86f6033c0" /> <img width="252" height="628" alt="MemoryResult" src="https://github.com/user-attachments/assets/3c69accd-6585-4f56-a278-fffdbc8149c5" />
+<img width="252" height="608" alt="VisualPerception" src="https://github.com/user-attachments/assets/8adfc590-eddf-4102-901e-909a12cfcb41" /> <img width="252" height="608" alt="MemoryImg" src="https://github.com/user-attachments/assets/92f67fb7-5c6f-41a5-8680-30b86f6033c0" /> <img width="252" height="608" alt="MemoryResult" src="https://github.com/user-attachments/assets/3c69accd-6585-4f56-a278-fffdbc8149c5" />
   
 ---
 ## Target Users
